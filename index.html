@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUNAMIS Doar Faz Bem Itapetininga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #E63946;
+            --secondary-color: #FF6B35;
+            --accent-color: #FCA311;
+            --text-color: #333333;
+            --light-bg: #F8F9FA;
+            --dark-bg: #1D3557;
+            --transition: all 0.3s ease;
+            --card-shadow: 0 8px 24px rgba(230, 57, 70, 0.15);
+            --header-height: 80px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            font-weight: 400;
+        }
+        
+        /* HEADER ESTILIZADO */
+        header {
+            background: #ffffff;
+            color: var(--text-color);
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 16px rgba(230, 57, 70, 0.1);
+            height: var(--header-height);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 100%;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            color: var(--primary-color);
+        }
+        
+        .logo i {
+            margin-right: 12px;
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav li {
+            position: relative;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            font-size: 1rem;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            margin-top: var(--header-height);
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero-text {
+            text-align: left;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        .video-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+        
+        /* CONTAINER GERAL */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 1rem;
+        }
+        
+        /* SECTION TITLES */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            font-size: 2.5rem;
+            color: var(--text-color);
+            font-weight: 700;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            margin: 1rem auto;
+            border-radius: 3px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* CARDS MODERNOS */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 40px rgba(230, 57, 70, 0.2);
+        }
+        
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .card i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        /* GALERIA AGRUPADA */
+        .gallery-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 4rem;
+        }
+        
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .gallery-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .gallery-description {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            height: 200px;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .photo-counter {
+            text-align: center;
+            color: #777;
+            font-weight: 500;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* VÍDEOS */
+        .videos-section {
+            background: var(--light-bg);
+            padding: 5rem 0;
+            margin: 4rem 0;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        
+        .video-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+        
+        .video-wrapper-small {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        
+        .video-wrapper-small iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+        
+        .video-description {
+            text-align: center;
+            color: #666;
+            margin-top: 1.2rem;
+            font-style: italic;
+        }
+        
+        /* IDEALIZADOR SECTION */
+        .founder-section {
+            background: var(--light-bg);
+            padding: 5rem 0;
+            margin: 4rem 0;
+        }
+        
+        .founder-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .founder-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            box-shadow: var(--card-shadow);
+            margin: 0 auto;
+        }
+        
+        .founder-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+        
+        .founder-info p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .founder-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .founder-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+        
+        .founder-social a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 1024px) {
+            .hero-content {
+                gap: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .founder-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            nav ul {
+                gap: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                padding: 1rem 0;
+                height: auto;
+            }
+            
+            header {
+                position: relative;
+                height: auto;
+            }
+            
+            .hero {
+                margin-top: 0;
+                padding: 4rem 1.5rem 2rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .card-grid, .gallery-grid, .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.5rem;
+                margin-bottom: 1rem;
+                display: block;
+                width: 100%;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .founder-photo {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .gallery-section {
+                padding: 1.5rem;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--primary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            z-index: 1000;
+            font-size: 1.5rem;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>DUNAMIS Doar Faz Bem</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#videos">Vídeos</a></li>
+                    <li><a href="#colaboradores">Colaboradores</a>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Transformando famílias através das crianças</h1>
+                <p>O projeto Dunamis leva alegria, valores e esperança para comunidades de Itapetininga através de eventos solidários e atividades educativas.</p>
+                <div>
+                    <a href="#galeria" class="btn">Ver Nossas Ações</a>
+                    <a href="#contato" class="btn btn-outline">Fazer Parte</a>
+                </div>
+            </div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4UhfHkeLoS4?si=i9AwODgnm0AzRz-Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- SEÇÃO: NOSSA HISTÓRIA -->
+        <section id="sobre">
+            <h2 class="section-title">Nossa História</h2>
+            <p class="section-subtitle">Conheça a trajetória do projeto Dunamis e como estamos transformando realidades em Itapetininga</p>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Missão</h3>
+                    <p>Promover a transformação de famílias por meio das crianças, oferecendo eventos que unem diversão, educação, valores morais e a mensagem de Jesus Cristo.</p>
+                </div>
+                
+                <div class="card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Visão</h3>
+                    <p>Ser referência em projetos sociais na cidade de Itapetininga, com espaço físico próprio e presença em todos os bairros, tornando-se um canal de esperança, prevenção e transformação social.</p>
+                </div>
+                
+                <div class="card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Valores</h3>
+                    <p>Amor ao próximo, Fé e Esperança, Integridade, Prevenção e Alegria são os pilares que guiam todas as nossas ações e decisões.</p>
+                </div>
+            </div>
+            
+            <div class="intro">
+                <p>O Dunamis Doar Faz Bem nasceu em 2023 com um propósito claro: alcançar as famílias através das crianças. Acreditamos que transformar a realidade começa no coração dos pequenos, por isso criamos um projeto social que une diversão, valores e esperança.</p>
+                
+                <p>Realizamos festas solidárias que reúnem brinquedos infláveis, pipoca, algodão-doce, música e muita alegria. Mas nosso trabalho vai além da recreação: por meio de música, teatro e palestras, transmitimos valores morais, incentivamos a prevenção e o combate à violência, às drogas e ao abuso, e compartilhamos a mensagem de Jesus Cristo de forma prática e acessível.</p>
+                
+                <p>De 2023 a 2025, já promovemos cinco grandes eventos, impactando cerca de 5.000 pessoas e 3.000 crianças em nossa cidade de Itapetininga. Cada evento é uma oportunidade de semear transformação e fortalecer a esperança em nossa comunidade.</p>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO: GALERIA AGRUPADA -->
+        <section id="galeria">
+            <h2 class="section-title">Nossa Galeria</h2>
+            <p class="section-subtitle">Momentos especiais que marcaram nossa trajetória</p>
+            
+            <!-- GALERIA 1: DIVERSÃO GARANTIDA -->
+            <div class="gallery-section">
+                <div class="gallery-header">
+                    <h3 class="gallery-title">DIVERSÃO GARANTIDA</h3>
+                    <p class="gallery-description">Momentos de Diversão e alegria das crianças nos brinquedos. Mais de 3000 crianças se divertiram em todo evento.</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/VYqrZSgr/IMG-9368.jpg" alt="Crianças se divertindo">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/PvHjWJmN/DSC-0476.jpg" alt="Crianças brincando">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/ks1MYmh2/DSC05037.jpg" alt="Crianças se divertindo">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/MDRkbnX0/DSC-0484.jpg" alt="Crianças brincando">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/kfc1V9C/DSC-0483.jpg" alt="Crianças se divertindo">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/R40d31vw/IMG-9372.jpg" alt="Crianças brincando">
+                    </div>
+                </div>
+                <p class="photo-counter">12 fotos nesta sessão</p>
+            </div>
+            
+            <!-- GALERIA 2: ENTREGA DE PRESENTES -->
+            <div class="gallery-section">
+                <div class="gallery-header">
+                    <h3 class="gallery-title">ENTREGA DE PRESENTES</h3>
+                    <p class="gallery-description">Cada criança recebeu seu presente com muito carinho e alegria.</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/TxTB8FVx/IMG-9579.jpg" alt="Entrega de presentes">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/r2rJB5my/IMG-9587.jpg" alt="Criança recebendo presente">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/4RMPSzwV/DSC05122.jpg" alt="Entrega de presentes">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/Q7044Qtf/DSC05178.jpg" alt="Criança recebendo presente">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/bgzct9s5/DSC05165.jpg" alt="Entrega de presentes">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/whqWKtQF/DSC05161.jpg" alt="Criança recebendo presente">
+                    </div>
+                </div>
+                <p class="photo-counter">14 fotos nesta sessão</p>
+            </div>
+            
+            <!-- GALERIA 3: PALESTRAS -->
+            <div class="gallery-section">
+                <div class="gallery-header">
+                    <h3 class="gallery-title">PALESTRAS DE CONSCIENTIZAÇÃO</h3>
+                    <p class="gallery-description">Psicóloga Ednéia Jardim aborda assuntos voltados a violência contra a mulher e prevenção a violência e abuso infantil.</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/Xkzs7kfR/Screenshot-20250918-202155.png" alt="Palestra de conscientização">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/Y4GnQcjZ/Screenshot-20250918-202236.png" alt="Palestra educativa">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/RTG3MQn1/DSC-0514.jpg" alt="Palestra de conscientização">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/Kjk0Gvdc/Screenshot-20250918-202129.png" alt="Palestra educativa">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/RkDxLZ1R/DSC-0479.jpg" alt="Palestra de conscientização">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/7xhqX409/DSC-0478-1.jpg" alt="Palestra educativa">
+                    </div>
+                </div>
+                <p class="photo-counter">9 fotos nesta sessão</p>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO: VÍDEOS -->
+        <section class="videos-section" id="videos">
+            <div class="container">
+                <h2 class="section-title">Nossos Vídeos</h2>
+                <p class="section-subtitle">Acompanhe os melhores momentos dos nossos eventos</p>
+                
+                <div class="video-grid">
+                    <!-- VÍDEO 1 -->
+                    <div class="video-card">
+                        <h4>🎭 Personagens Animados Dançando</h4>
+                        <div class="video-wrapper-small">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/kD6O5RFwU0U?si=vQe-VSlkpNmeQr0j" title="Personagens Patrulha Canina, Sonic e Pica-Pau" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p class="video-description">Personagens Patrulha Canina, Sonic e Pica-Pau dançando e alegrando a criançada!</p>
+                    </div>
+                    
+                    <!-- VÍDEO 2 -->
+                    <div class="video-card">
+                        <h4>👨‍👩‍👧‍👦 Público e Idealizador do Projeto</h4>
+                        <div class="video-wrapper-small">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/K-6Nm17HE9g?si=EdlSDjHn-paDHeH1" title="Público e Idealizador do Projeto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p class="video-description">Momento especial mostrando o público volumoso e o idealizador Romário conduzindo as apresentações.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<!-- ========== SEÇÃO: VÍDEOS DAS APRESENTAÇÕES ========== -->
+<section class="videos-section" id="apresentacoes">
+    <div class="container">
+        <h2 class="section-title">Vídeos das Apresentações</h2>
+        <p class="section-subtitle">Reviva os melhores momentos de cada atividade do nosso evento</p>
+        
+        <!-- SUBSESSÃO: MUSICALIDADE -->
+        <div class="category-section">
+            <h3 class="category-title">🎵 Musicalidade</h3>
+            <p class="category-description">Apresentações musicais que animaram o evento e encantaram o público</p>
+            
+            <div class="video-grid">
+                <!-- Vídeo 1 - Airton Gaiteiro -->
+                <div class="video-card">
+                    <h4>Airton Gaiteiro e Banda - Show Completo</h4>
+                    <div class="video-wrapper">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/GLCZWctnA0w?si=0OHfvkkDDFPNGeOP" title="Airton Gaiteiro e Banda" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Apresentação completa da banda gaúcha liderada pelo talentoso Airton Gaiteiro.</p>
+                </div>
+                
+                <!-- Vídeo 2 - Airton Gaiteiro -->
+                <div class="video-card">
+                    <h4>Airton Gaiteiro - Solos e Improvisações</h4>
+                    <div class="video-wrapper">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/CVkpmxTIyNo?si=mTDqyWgTSlXbuu1e" title="Solos de Gaita" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Momento dos solos de gaita onde Airton demonstra toda sua técnica musical.</p>
+                </div>
+                
+                <!-- Vídeo 3 - Airton Gaiteiro -->
+                <div class="video-card">
+                    <h4>Ritmos Tradicionais Gaúchos</h4>
+                    <div class="video-wrapper">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/zdDHCzl5b6g?si=THBmfJIJB8IY2Vp2" title="Ritmos Gaúchos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Repertório especial com os ritmos que fazem a plateia dançar e se emocionar.</p>
+                </div>
+                
+                <!-- Vídeo 4 - Airton Gaiteiro -->
+                <div class="video-card">
+                    <h4>Sucessos da Música Gaúcha</h4>
+                    <div class="video-wrapper">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/LIOpISdbxhA?si=beeB6u-41bwDFFgF" title="Sucessos Musicais" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Os maiores clássicos que representam a cultura e tradição do povo gaúcho.</p>
+                </div>
+                
+                <!-- Vídeo 5 - Airton Gaiteiro -->
+                <div class="video-card">
+                    <h4>Encerramento e Agradecimentos</h4>
+                    <div class="video-wrapper">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/ic3jQMqzdck?si=eSkpj9zG666GsZMA" title="Encerramento" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Momento final do show com agradecimentos e última música que emocionou a todos.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SUBSESSÃO: PALESTRAS -->
+        <div class="category-section">
+            <h3 class="category-title">🎤 Palestras e Conscientização</h3>
+            <p class="category-description">Momentos de aprendizado e reflexão sobre temas importantes para a comunidade</p>
+            
+            <div class="video-grid">
+                <!-- Espaço para vídeos de palestras -->
+                <div class="video-card">
+                    <h4>Palestra de Conscientização</h4>
+                    <div class="video-wrapper">
+                        <div style="background: linear-gradient(135deg, #E63946, #FF6B35); padding: 3rem; text-align: center; border-radius: 12px; color: white;">
+                            <i class="fas fa-chalkboard-teacher" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <p>Em breve mais vídeos das palestras educativas</p>
+                        </div>
+                    </div>
+                    <p class="video-description">Aguardem nossas próximas palestras sobre temas relevantes para a comunidade.</p>
+                </div>
+                
+                <div class="video-card">
+                    <h4>Prevenção e Educação</h4>
+                    <div class="video-wrapper">
+                        <div style="background: linear-gradient(135deg, #FF6B35, #FCA311); padding: 3rem; text-align: center; border-radius: 12px; color: white;">
+                            <i class="fas fa-heart" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <p>Vídeos em produção</p>
+                        </div>
+                    </div>
+                    <p class="video-description">Material educativo sobre prevenção e cuidados importantes.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SUBSESSÃO: TEATRO -->
+        <div class="category-section">
+            <h3 class="category-title">🎭 Teatro Educacional</h3>
+            <p class="category-description">Peças teatrais que ensinam e divertem ao mesmo tempo</p>
+            
+            <div class="video-grid">
+                <!-- Espaço para vídeos de teatro -->
+                <div class="video-card">
+                    <h4>Teatro de Fantoches</h4>
+                    <div class="video-wrapper">
+                        <div style="background: linear-gradient(135deg, #FCA311, #1D3557); padding: 3rem; text-align: center; border-radius: 12px; color: white;">
+                            <i class="fas fa-theater-masks" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <p>Gravações em andamento</p>
+                        </div>
+                    </div>
+                    <p class="video-description">Peças educativas com fantoches para as crianças.</p>
+                </div>
+                
+                <div class="video-card">
+                    <h4>Apresentações Infantis</h4>
+                    <div class="video-wrapper">
+                        <div style="background: linear-gradient(135deg, #1D3557, #E63946); padding: 3rem; text-align: center; border-radius: 12px; color: white;">
+                            <i class="fas fa-child" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <p>Em breve novidades</p>
+                        </div>
+                    </div>
+                    <p class="video-description">Momento especial das apresentações teatrais infantis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   
+<!-- ========== SEÇÃO: COLABORADORES ========== -->
+<section id="colaboradores" style="padding: 5rem 0;">
+    <div class="container">
+        <h2 class="section-title">Nossos Colaboradores</h2>
+        <p class="section-subtitle">A equipe dedicada de voluntários que torna o projeto Dunamis possível</p>
+        
+        <div class="team-grid">
+            <!-- Colaborador 1 -->
+            <div class="team-member">
+                <img src="https://i.ibb.co/9MTr30z/Screenshot-20250827-115823.jpg" alt="Fulano de Tal" class="member-photo">
+                <h3 class="member-name">FRANCILENE OLIVEIRA</h3>
+                <p class="member-role">Coordenadora de Eventos</p>
+                <p>Responsável pela organização e logística de todos os eventos do projeto.</p>
+            </div>
+            
+            <!-- Colaborador 2 -->
+            <div class="team-member">
+                <img src="https://i.ibb.co/tT5dpzdb/IMG-20250920-WA0024-2.jpg" alt="Sicrana Silva" class="member-photo">
+                <h3 class="member-name">KELLY</h3>
+                <p class="member-role">Espetora de Atividades</p>
+                        <p>Monitora as atividades recreativas e educativas para as crianças.</p>
+            </div>
+            
+            <!-- Colaborador 3 -->
+            <div class="team-member">
+                <img src="https://placehold.co/200x200/FCA311/FFFFFF?text=B" alt="Beltrano Santos" class="member-photo">
+                <h3 class="member-name">NANDO ALMENARA</h3>
+                <p class="member-role">Responsável Técnico</p>
+                <p>Responsável pelos aparelhos de Sonorização, palco, Luz dos eventos.</p>
+            </div>
+            
+            <!-- Colaborador 4 -->
+            <div class="team-member">
+                <img src="https://placehold.co/200x200/1D3557/FFFFFF?text=M" alt="Maria Oliveira" class="member-photo">
+                <h3 class="member-name">Maria Oliveira</h3>
+                <p class="member-role">Coord. de Comunicação</p>
+                <p>Gerencia as redes sociais e comunicação do projeto.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- SEÇÃO: IDEALIZADOR (NO FINAL DO SITE) -->
+    <section class="founder-section" id="idealizador">
+        <div class="container">
+            <h2 class="section-title">Conheça o Idealizador</h2>
+            <div class="founder-content">
+                <div>
+                    <img src="https://i.ibb.co/r2DpjmWq/1758404097728.jpg" alt="Romário Oliveira - Idealizador" class="founder-photo">
+                </div>
+                <div class="founder-info">
+                    <h2>Romário Oliveira</h2>
+                    <p>Conhecido carinhosamente como "Romário do Pão", é o idealizador e coordenador do projeto Dunamis Doar Faz Bem. Com um coração voltado para o serviço social, dedica sua vida a levar amor, fé e oportunidade para as famílias e crianças de Itapetininga.</p>
+                    <p>Sua paixão por transformar vidas através da alegria das crianças inspirou a criação do projeto em 2023, que já impactou mais de 5.000 pessoas e 3.000 crianças na comunidade.</p>
+                    
+                    <div class="founder-social">
+                        <a href="https://www.instagram.com/romariodopao?igsh=aTJkZmFsdW00ZGli" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/17FVJRN4qh/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/message/7ZNV4GX7Q626E1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:romario.sp_@hotmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="#inicio" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">
+                        <i class="fas fa-hands-helping"></i>
+                        DUNAMIS
+                    </div>
+                    <p class="footer-description">Transformando famílias através das crianças em Itapetininga e região.</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/romariodopao?igsh=aTJkZmFsdW00ZGli" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/17FVJRN4qh/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/message/7ZNV4GX7Q626E1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Contato</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (15) 9 8134-1464</p>
+                        <p><i class="fas fa-envelope"></i> romario.sp_@hotmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Itapetininga, SP</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 DUNAMIS Doar Faz Bem Itapetininga. Todos os direitos reservados. CNPJ: 51.787.178/0001-65</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Botão voltar ao topo
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        // Animação de revelação ao scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animação
+        document.querySelectorAll('.card, .gallery-section, .video-card').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
