@@ -2327,4 +2327,44 @@ document.addEventListener('keydown', function(event) {
             changeImage(1);
         }
     }
-});</script>
+});</script><script>
+   function openGallery(id) {
+    // fecha outras galerias se houver
+    document.querySelectorAll('.gallery-modal').forEach(modal => {
+        modal.style.display = 'none';
+    });
+    // abre a galeria clicada
+    document.getElementById(id).style.display = 'block';
+}
+
+function closeGallery() {
+    document.querySelectorAll('.gallery-modal').forEach(modal => {
+        modal.style.display = 'none';
+    });
+}
+
+let currentIndex = 0;
+let currentGallery = '';
+
+function openLightbox(index, gallery) {
+    currentIndex = index;
+    currentGallery = gallery;
+    document.getElementById('lightbox').style.display = 'block';
+    updateLightbox();
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+
+function changeImage(step) {
+    const images = document.querySelectorAll('#' + currentGallery + ' .gallery-item img');
+    currentIndex = (currentIndex + step + images.length) % images.length;
+    updateLightbox();
+}
+
+function updateLightbox() {
+    const images = document.querySelectorAll('#' + currentGallery + ' .gallery-item img');
+    document.getElementById('lightbox-img').src = images[currentIndex].src;
+    }
+</script>
